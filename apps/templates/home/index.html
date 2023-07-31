@@ -26,7 +26,7 @@
       text-align: right;
     }
 
-    .tab-content {
+    /* .tab-content {
       flex: 1;
     }
 
@@ -36,7 +36,7 @@
       align-items: center;
       background-color: black;
       width: 100%;
-    }
+    } */
   </style>
 
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
@@ -508,24 +508,6 @@
 <!-- Specific JS goes HERE --> 
 {% block javascripts %}
 
-<script>
-  // Function to manually trigger chart resize when tab is shown
-  function onTabShown(event) {
-    var activeTab = $(event.target);
-    var chartContainer = activeTab.find('.chart');
-    if (chartContainer.length > 0) {
-      var chartElement = chartContainer[0].querySelector('canvas');
-      if (chartElement) {
-        Chart.controllers.line.prototype.resize.call(chartElement);
-      }
-    }
-  }
-
-  $(document).ready(function() {
-    // Add event listener to the tab shown event
-    $('a[data-bs-toggle="tab"]').on('shown.bs.tab', onTabShown);
-  });
-</script>
   <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script src="{{ config.ASSETS_ROOT }}/js/plugins/chartjs.min.js"></script>
